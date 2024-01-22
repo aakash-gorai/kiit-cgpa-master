@@ -4,6 +4,7 @@ import "./Data.css";
 const Data = () => {
   const [currentCGPA, setCurrentCGPA] = useState("");
   const [selectedSemester, setSelectedSemester] = useState("");
+  const [selectedBranch, setSelectedBranch] = useState("");
   const [targetCGPA, setTargetCGPA] = useState("");
   const [targetSGPA, setTargetSGPA] = useState("");
   const [targetType, setTargetType] = useState("Target CGPA");
@@ -22,6 +23,9 @@ const Data = () => {
 
   const handleSemesterChange = (event) => {
     setSelectedSemester(event.target.value);
+  };
+  const handleBranchChange = (event) => {
+    setSelectedBranch(event.target.value);
   };
   function calculateCGPA(cummulativeIndex, index) {
     let cummulativeCreditIndex = currentCGPA * cummulativeIndex;
@@ -46,13 +50,37 @@ const Data = () => {
         setFinalCGPA(calculateCGPA(86, 22));
         break;
       case "semester5":
-        setFinalCGPA(calculateCGPA(110, 23));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setFinalCGPA(calculateCGPA(109, 23));
+        } else {
+          setFinalCGPA(calculateCGPA(110, 23));
+        }
         break;
       case "semester6":
-        setFinalCGPA(calculateCGPA(133, 13));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setFinalCGPA(calculateCGPA(132, 13));
+        } else {
+          setFinalCGPA(calculateCGPA(133, 13));
+        }
         break;
       case "semester7":
-        setFinalCGPA(calculateCGPA(146, 10));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setFinalCGPA(calculateCGPA(142, 10));
+        } else {
+          setFinalCGPA(calculateCGPA(143, 10));
+        }
         break;
       default:
       // code block
@@ -79,13 +107,37 @@ const Data = () => {
         setRequiredSGPA(calculateSGPA(86, 22));
         break;
       case "semester5":
-        setRequiredSGPA(calculateSGPA(110, 23));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setRequiredSGPA(calculateSGPA(109, 23));
+        } else {
+          setRequiredSGPA(calculateSGPA(110, 23));
+        }
         break;
       case "semester6":
-        setRequiredSGPA(calculateSGPA(110, 23));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setRequiredSGPA(calculateSGPA(132, 13));
+        } else {
+          setRequiredSGPA(calculateSGPA(133, 13));
+        }
         break;
       case "semester7":
-        setRequiredSGPA(calculateSGPA(143, 10));
+        if (
+          selectedBranch === "csce" ||
+          selectedBranch === "it" ||
+          selectedBranch === "csse"
+        ) {
+          setRequiredSGPA(calculateSGPA(142, 10));
+        } else {
+          setRequiredSGPA(calculateSGPA(143, 10));
+        }
         break;
       default:
       // code block
@@ -138,6 +190,23 @@ const Data = () => {
               <option value="semester5">Semester 5</option>
               <option value="semester6">Semester 6</option>
               <option value="semester7">Semester 7</option>
+              {/* Add more options for each semester */}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="branch">Select Branch:</label>
+            <select
+              className="form-control"
+              id="branch"
+              value={selectedBranch}
+              onChange={handleBranchChange}
+              required
+            >
+              <option value="">Select Branch</option> {/* Blank option */}
+              <option value="cse">CSE</option>
+              <option value="it">IT</option>
+              <option value="csse">CSSE</option>
+              <option value="csce">CSCE</option>
               {/* Add more options for each semester */}
             </select>
           </div>
