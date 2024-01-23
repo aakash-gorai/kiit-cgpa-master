@@ -173,7 +173,7 @@ const Data = () => {
           </div>
           <div className="form-group">
             <label htmlFor="semester">
-              Select Semester upto which CGPA is calculated:
+              Select Current Semester:
             </label>
             <select
               className="form-control"
@@ -183,13 +183,13 @@ const Data = () => {
               required
             >
               <option value="">Select Semester</option> {/* Blank option */}
-              <option value="semester1">Semester 1</option>
-              <option value="semester2">Semester 2</option>
-              <option value="semester3">Semester 3</option>
-              <option value="semester4">Semester 4</option>
-              <option value="semester5">Semester 5</option>
-              <option value="semester6">Semester 6</option>
-              <option value="semester7">Semester 7</option>
+              <option value="semester1">Semester 2</option>
+              <option value="semester2">Semester 3</option>
+              <option value="semester3">Semester 4</option>
+              <option value="semester4">Semester 5</option>
+              <option value="semester5">Semester 6</option>
+              <option value="semester6">Semester 7</option>
+              <option value="semester7">Semester 8</option>
               {/* Add more options for each semester */}
             </select>
           </div>
