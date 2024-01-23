@@ -221,7 +221,7 @@ const Data = () => {
               autoComplete="off"
               onClick={handleButtonClick1}
             >
-              Find SGPA
+              Find Required SGPA
             </button>
             <button
               type="button"
@@ -233,7 +233,7 @@ const Data = () => {
               autoComplete="off"
               onClick={handleButtonClick2}
             >
-              Find CGPA
+              Find Final CGPA
             </button>
           </div>
           <div className="form-group">
