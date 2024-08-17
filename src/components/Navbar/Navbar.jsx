@@ -6,7 +6,7 @@ const Navbar = () => {
         <span class="navbar-brand mb-1 h1">
           <h3>KIIT CGPA Master</h3>
           <center>
-            <h6>Made by Aakash</h6>
+            <h6>Made by Aakash Gorai</h6>
           </center>
         </span>
       </nav>
